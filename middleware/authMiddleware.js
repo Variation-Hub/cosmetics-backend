@@ -13,7 +13,7 @@ const verifyToken = (req, res, next) => {
 
     const token = authHeader.split(" ")[1];
     try {
-        const decoded = jwt.verify(token, process.env.SECRET);
+        const decoded = jwt.verify(token, "5658485485");
         req.user = decoded;
         // if (req.baseUrl === '/api/users' && req.user.role !== 'Admin') {
         //     return res.status(403).json({
