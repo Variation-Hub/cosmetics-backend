@@ -4,6 +4,7 @@ const cors = require('cors');
 require("dotenv").config();
 const morgan = require('morgan');
 const paymentRoute = require("./routes/paymentRoute")
+const registerRoute = require("./routes/registerRoute")
 
 
 const PORT = process.env.PORT || 8000;
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
     res.send("Server is running")
 });
 app.use('/', paymentRoute);
+app.use('/user', registerRoute);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
